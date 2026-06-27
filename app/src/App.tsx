@@ -38,6 +38,74 @@ function App() {
   }, [])
 
   useEffect(() => {
+    const seoData: Record<string, { title: string; description: string }> = {
+      '/': {
+        title: 'Personal Banking | Korvantis Imperial Bank',
+        description: 'Securely manage your personal banking online with Korvantis Imperial Bank. View balances, transfer funds, and pay bills.'
+      },
+      '/business': {
+        title: 'Business Banking | Korvantis Imperial Bank',
+        description: 'Explore tailored commercial accounts, business loans, and expert banking services for enterprise growth with Korvantis Imperial Bank.'
+      },
+      '/private-banking': {
+        title: 'Private Banking | Korvantis Imperial Bank',
+        description: 'Exclusive wealth management, dedicated private bankers, and custom financial solutions with Korvantis Imperial Bank Private Banking.'
+      },
+      '/international': {
+        title: 'International Money Transfer | Korvantis Imperial Bank',
+        description: 'Send and receive money globally with competitive exchange rates and secure transaction protocols via Korvantis Imperial Bank.'
+      },
+      '/login': {
+        title: 'Log In | Korvantis Imperial Bank Online Banking',
+        description: 'Log in securely to your Korvantis Imperial Bank online banking portal to manage your accounts, cards, and payments.'
+      },
+      '/admin/login': {
+        title: 'Admin Portal Log In | Korvantis Imperial Bank',
+        description: 'Secure administrator authentication for the Korvantis Imperial Bank admin management portal.'
+      },
+      '/register': {
+        title: 'Register for Online Banking | Korvantis Imperial Bank',
+        description: 'Register now for online banking access with Korvantis Imperial Bank. Quick, easy, and secure setup.'
+      },
+      '/dashboard': {
+        title: 'Dashboard | Korvantis Imperial Bank Online Banking',
+        description: 'Your Korvantis Imperial Bank customer dashboard. View available balances, link accounts, and access quick actions.'
+      },
+      '/admin': {
+        title: 'Admin Dashboard | Korvantis Imperial Bank Portal',
+        description: 'Administrative overview, user account status updates, deposit approvals, and transaction reports for Korvantis Imperial Bank.'
+      },
+      '/transfer': {
+        title: 'Transfer Funds & Pay Bills | Korvantis Imperial Bank',
+        description: 'Easily execute domestic and international money transfers, schedule payments, and settle utility bills securely.'
+      },
+      '/settings': {
+        title: 'Account Settings | Korvantis Imperial Bank Profile',
+        description: 'Manage your profile details, upload your avatar picture, and configure security preferences for your online banking account.'
+      },
+      '/suspended': {
+        title: 'Account Suspended | Korvantis Imperial Bank Security',
+        description: 'Security notification: This account has been suspended under active review. Please contact customer care immediately.'
+      }
+    }
+
+    const currentSeo = seoData[location.pathname] || {
+      title: 'Korvantis Imperial Bank | Secure Online Banking',
+      description: 'Securely manage your personal and business banking online with Korvantis Imperial Bank.'
+    }
+
+    document.title = currentSeo.title
+
+    let metaDescription = document.querySelector('meta[name="description"]')
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta')
+      metaDescription.setAttribute('name', 'description')
+      document.head.appendChild(metaDescription)
+    }
+    metaDescription.setAttribute('content', currentSeo.description)
+  }, [location.pathname])
+
+  useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = 'hidden'
     } else {
