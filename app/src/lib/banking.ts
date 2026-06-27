@@ -1,4 +1,4 @@
-﻿import {
+import {
   collection,
   doc,
   getDocs,
@@ -174,10 +174,10 @@ function accountNumberFor(uid: string, suffix: string) {
   return String(hash + 10000000).padStart(8, '0')
 }
 
-export function formatCurrency(amount: number, currency = 'GBP') {
-  return new Intl.NumberFormat('en-GB', {
+export function formatCurrency(amount: number, _currency = 'USD') {
+  return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency,
+    currency: 'USD',
     minimumFractionDigits: 2,
   }).format(amount)
 }
@@ -247,7 +247,7 @@ export async function createCustomerProfile(uid: string, data: RegistrationData)
       label: 'Current Account',
       accountNumber: accountNumberFor(uid, 'current'),
       balance: defaultAccountBalances.current,
-      currency: 'GBP',
+      currency: 'USD',
       isPrimary: true,
     },
     {
@@ -257,7 +257,7 @@ export async function createCustomerProfile(uid: string, data: RegistrationData)
       label: 'Savings Account',
       accountNumber: accountNumberFor(uid, 'savings'),
       balance: defaultAccountBalances.savings,
-      currency: 'GBP',
+      currency: 'USD',
       isPrimary: false,
     },
     {
@@ -267,7 +267,7 @@ export async function createCustomerProfile(uid: string, data: RegistrationData)
       label: 'Cash ISA',
       accountNumber: accountNumberFor(uid, 'isa'),
       balance: defaultAccountBalances.isa,
-      currency: 'GBP',
+      currency: 'USD',
       isPrimary: false,
     },
   ]

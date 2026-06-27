@@ -125,9 +125,9 @@ export default function UserDashboard() {
                   </div>
                   <div className="flex flex-wrap items-baseline gap-2 mt-2">
                     <span className="text-4xl font-bold">
-                      {formatCurrency(primaryAccount?.balance ?? profile.balance ?? 0, primaryAccount?.currency ?? 'GBP')}
+                      {formatCurrency(primaryAccount?.balance ?? profile.balance ?? 0, primaryAccount?.currency ?? 'USD')}
                     </span>
-                    <span className="text-white/70 text-lg">{primaryAccount?.currency ?? 'GBP'}</span>
+                    <span className="text-white/70 text-lg">{primaryAccount?.currency ?? 'USD'}</span>
                   </div>
                   <p className="text-white/70 text-sm mt-2">{primaryAccount?.label ?? 'Primary account'}</p>
                 </div>

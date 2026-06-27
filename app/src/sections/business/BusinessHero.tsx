@@ -23,13 +23,13 @@ export default function BusinessHero() {
             Business banking that works as hard as you
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-4">
-            Open a business bank account by 9 July and get £200, no monthly fee, digital banking and 24/7 support.
+            Open a business bank account by 9 July and get $200, no monthly fee, digital banking and 24/7 support.
           </p>
           <Link
             to="#"
             className="inline-block text-sm text-white/80 hover:text-white underline mb-8"
           >
-            Terms and conditions of the £200 offer
+            Terms and conditions of the $200 offer
           </Link>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="#" className="btn-primary text-center">

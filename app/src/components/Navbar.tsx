@@ -45,12 +45,6 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
             <span className="h-4 w-[1px] bg-white/20 mx-2" />
 
             <Link
-              to="/register"
-              className="px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors h-full flex items-center"
-            >
-              Register
-            </Link>
-            <Link
               to="/login"
               className="px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors h-full flex items-center gap-1.5"
             >

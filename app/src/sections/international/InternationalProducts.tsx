@@ -79,7 +79,7 @@ export default function InternationalProducts() {
             Whether you are moving abroad, living as an expat or settling into the UK, we make managing your money simple. With accounts in multiple currencies, fee-free international payments and 24/7 digital banking, you can stay in control wherever life takes you.
           </p>
           <p className="text-base text-[#595959] mb-6 leading-relaxed">
-            Your money is held in a secure, well regulated jurisdiction. Plus if you have more than £250,000 or the currency equivalent with us, you will have a dedicated relationship manager to offer clear guidance, coordinate expertise and support you as your needs grow.
+            Your money is held in a secure, well regulated jurisdiction. Plus if you have more than $250,000 or the currency equivalent with us, you will have a dedicated relationship manager to offer clear guidance, coordinate expertise and support you as your needs grow.
           </p>
           <p className="text-lg font-semibold text-[#1A1A1A]">
             Whatever comes next, you can bank on Korvantis Imperial Bank.

@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import {
   ArrowLeft, Send, Globe, Receipt, ChevronRight,
   Check, AlertCircle, User, Building2, Landmark,
-  CreditCard, PoundSterling, Euro, DollarSign, ArrowRight
+  CreditCard, DollarSign, ArrowRight
 } from 'lucide-react'
 import { useAuth } from '../../hooks/AuthContext'
 import {
@@ -79,7 +79,7 @@ function createEmptyTransferData(fromAccount = ''): TransferData {
     sortCode: '',
     bankName: '',
     amount: '',
-    currency: 'GBP',
+    currency: 'USD',
     reference: '',
     billType: '',
     billAccount: '',
@@ -142,7 +142,7 @@ export default function TransferPage() {
     setOtpError('')
     setTransferData((current) => ({
       ...createEmptyTransferData(current.fromAccount),
-      currency: type === 'international' ? current.currency : 'GBP',
+      currency: type === 'international' ? current.currency : 'USD',
     }))
     navigate(`/transfer?tab=${type}`, { replace: true })
   }
@@ -334,9 +334,7 @@ export default function TransferPage() {
       <div className="sm:col-span-2">
         <label className="block text-sm font-medium text-[#4E655D] mb-2">Amount</label>
         <div className="relative">
-          {transferData.currency === 'GBP' && <PoundSterling className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8AA097]" size={18} />}
-          {transferData.currency === 'EUR' && <Euro className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8AA097]" size={18} />}
-          {transferData.currency === 'USD' && <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8AA097]" size={18} />}
+          <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8AA097]" size={18} />
           <input type="number" name="amount" value={transferData.amount} onChange={handleChange}
             placeholder="0.00" className={`${inputClass('amount')} pl-10`} />
         </div>
@@ -346,9 +344,7 @@ export default function TransferPage() {
         <label className="block text-sm font-medium text-[#4E655D] mb-2">Currency</label>
         <select name="currency" value={transferData.currency} onChange={handleChange}
           className={inputClass('currency')}>
-          <option value="GBP">GBP</option>
-          <option value="EUR">EUR</option>
-          <option value="USD">USD</option>
+          <option value="USD">USD ($)</option>
         </select>
       </div>
     </div>
