@@ -5,10 +5,10 @@ import { useScrollReveal } from '../../hooks/useScrollReveal'
 
 const products = [
   {
-    title: 'Mortgages',
-    description: 'Find a mortgage deal that best suits your needs. Explore and compare our mortgage rates, or apply for a mortgage, online or in our app.',
-    cta: 'Find your mortgage deal',
-    image: '/images/product-mortgages.jpg',
+    title: 'Commercial Accounts',
+    description: 'Empower your enterprise with flexible commercial checking, merchant services, and business savings plans.',
+    cta: 'Open a commercial account',
+    image: '/images/business-hero.jpg',
   },
   {
     title: 'Current accounts',

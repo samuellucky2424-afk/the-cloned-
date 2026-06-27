@@ -9,8 +9,8 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-mortgage.jpg"
-          alt="Happy couple at their new home"
+          src="/images/business-hero.jpg"
+          alt="Modern business building with clean glass architecture"
           className="w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
@@ -24,23 +24,23 @@ export default function HeroSection() {
           style={{ opacity: 0 }}
         >
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            Flexible Home Mortgages
+            Empowering Your Business
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-4 font-medium">
-            Lock in your interest rate today.
+            Smart commercial and corporate banking solutions.
           </p>
           <p className="text-base md:text-lg text-white/80 mb-4 leading-relaxed">
-            Find the right mortgage with flexible term options and competitive rates designed to fit your unique financial goals.
+            Manage cash flow, optimize liquidity, and scale your operations with Korvantis Imperial Bank's premium commercial suites.
           </p>
           <p className="text-sm text-white/60 mb-8 leading-relaxed">
-            All home loans are subject to credit approval and underwriting guidelines. Programs, rates, terms, and conditions are subject to change without notice. Equal Housing Lender.
+            All commercial credit facilities and loans are subject to credit approval and underwriting guidelines. Member FDIC.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="/register"
+              to="/login"
               className="btn-primary text-center"
             >
-              Start your mortgage journey
+              Log in
             </Link>
           </div>
         </div>

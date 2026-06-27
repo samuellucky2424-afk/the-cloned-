@@ -12,7 +12,7 @@ export default function Footer() {
       { label: 'Credit cards', href: '#' },
       { label: 'Loans', href: '#' },
       { label: 'Car finance', href: '#' },
-      { label: 'Mortgages', href: '#' },
+      { label: 'Commercial Lending', href: '#' },
       { label: 'Savings', href: '#' },
       { label: 'ISAs', href: '#' },
       { label: 'Investing', href: '#' },

@@ -4,7 +4,7 @@ import { Calculator, Heart, Shield, Lock, ChevronRight } from 'lucide-react'
 const quickLinks = [
   {
     icon: Calculator,
-    label: 'Mortgage Calculator',
+    label: 'Business Loan Calculator',
     href: '#',
   },
   {

@@ -65,13 +65,13 @@ const menuCategories: MenuCategory[] = [
     ],
   },
   {
-    title: 'Mortgages',
-    subtitle: 'Accounts & calculators',
+    title: 'Commercial Lending',
+    subtitle: 'Accounts & lending',
     links: [
-      { label: 'First time buyers', href: '#' },
-      { label: 'Mortgage calculator', href: '#' },
-      { label: 'Remortgage to Korvantis Imperial Bank', href: '#' },
-      { label: 'Buy to let', href: '#' },
+      { label: 'Term Loans', href: '#' },
+      { label: 'Business credit line', href: '#' },
+      { label: 'Equipment financing', href: '#' },
+      { label: 'Commercial real estate', href: '#' },
     ],
   },
   {

@@ -23,9 +23,9 @@ const products = [
   },
   {
     icon: Home,
-    title: 'International buy-to-let mortgages',
-    description: 'If you want to acquire an investment rental property or add to your existing rental portfolio in the US, we can help.',
-    cta: 'Explore mortgages',
+    title: 'International Commercial Lending',
+    description: 'Acquire and scale commercial real estate assets or fund trade operations across the US and international markets.',
+    cta: 'Explore commercial lending',
   },
 ]
 

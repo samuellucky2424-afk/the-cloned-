@@ -21,7 +21,7 @@ const services = [
   {
     icon: Landmark,
     title: 'Banking Services',
-    description: 'Exclusive products and preferential rates on mortgages, savings and everyday banking.',
+    description: 'Exclusive products and preferential rates on savings, treasury services, and commercial banking.',
   },
 ]
 
