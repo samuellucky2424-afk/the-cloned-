@@ -94,9 +94,9 @@ app.post('/api/otp/resend', async (req, res) => {
 
     // Real Mode - send using Resend API
     const resend = new Resend(apiKey);
-    const amountStr = new Intl.NumberFormat('en-GB', {
+    const amountStr = new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: transaction?.currency || 'GBP'
+      currency: transaction?.currency || 'USD'
     }).format(transaction?.amount || 0);
 
     const emailHtml = `
@@ -141,7 +141,7 @@ app.post('/api/otp/resend', async (req, res) => {
         </div>
         <div style="background-color: #f4faf7; color: #667a73; padding: 16px; text-align: center; font-size: 11px; border-top: 1px solid #e1e8e5;">
           <p style="margin: 0;">This is an automated security message. Please do not reply to this email.</p>
-          <p style="margin: 4px 0 0 0;">&copy; Korvantis Imperial Bank Group plc. All rights reserved.</p>
+          <p style="margin: 4px 0 0 0;">&copy; Korvantis Imperial Bank Group, Inc. All rights reserved.</p>
         </div>
       </div>
     `;

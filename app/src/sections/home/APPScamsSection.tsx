@@ -12,29 +12,29 @@ export default function APPScamsSection() {
           <div className="flex items-center gap-3 mb-4">
             <AlertTriangle size={24} className="text-amber-500" />
             <h2 className="text-2xl md:text-3xl font-bold text-[#1A1A1A]">
-              Authorised push payment (APP) scams rankings in 2024
-            </h2>
-          </div>
+            Wire Transfer and Peer-to-Peer (P2P) Payment Scams
+          </h2>
+        </div>
 
-          <p className="text-sm text-[#595959] mb-6 leading-relaxed">
-            Authorised push payment (APP) scams happen when someone is tricked into transferring money to a fraudster's bank account. Information about Korvantis Imperial Bank's performance prior to the introduction of the reimbursement requirement in October 2024 can be found in{' '}
-            <a href="https://www.psr.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#006A4D] underline hover:no-underline">
-              PSR's latest APP Scams Performance Report (PDF, 1.13MB)
-            </a>{' '}
-            published in February 2026.
-          </p>
+        <p className="text-sm text-[#595959] mb-6 leading-relaxed">
+          Wire transfer and Peer-to-Peer (P2P) payment scams happen when someone is tricked into transferring funds directly to a fraudster's account. Information about modern fraud patterns, warning signs, and consumer protections can be found in the{' '}
+          <a href="https://www.ftc.gov" target="_blank" rel="noopener noreferrer" className="text-[#006A4D] underline hover:no-underline">
+            FTC's latest Consumer Protection and Fraud Reports
+          </a>{' '}
+          published regularly by the Federal Trade Commission.
+        </p>
 
-          <p className="text-sm text-[#595959] mb-4 leading-relaxed">
-            <strong>The data shown in the report reflects Korvantis Imperial Bank Group performance.</strong>
-          </p>
+        <p className="text-sm text-[#595959] mb-4 leading-relaxed">
+          <strong>The data shown in the report reflects nationwide fraud statistics across US financial services.</strong>
+        </p>
 
-          <p className="text-sm text-[#595959] mb-6">
-            We've put together some{' '}
-            <Link to="/login" className="text-[#006A4D] underline hover:no-underline">
-              further guidance
-            </Link>{' '}
-            to help with any questions you may have.
-          </p>
+        <p className="text-sm text-[#595959] mb-6">
+          We've put together some{' '}
+          <Link to="/login" className="text-[#006A4D] underline hover:no-underline">
+            further security guidance
+          </Link>{' '}
+          to help protect your accounts.
+        </p>
         </div>
       </div>
     </section>

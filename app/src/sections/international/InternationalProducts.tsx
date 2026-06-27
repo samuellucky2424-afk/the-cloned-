@@ -24,7 +24,7 @@ const products = [
   {
     icon: Home,
     title: 'International buy-to-let mortgages',
-    description: 'If you want to acquire an investment rental property or add to your existing rental portfolio in the UK, we can help.',
+    description: 'If you want to acquire an investment rental property or add to your existing rental portfolio in the US, we can help.',
     cta: 'Explore mortgages',
   },
 ]
@@ -76,7 +76,7 @@ export default function InternationalProducts() {
             Where global living meets trusted expertise
           </h3>
           <p className="text-base text-[#595959] mb-4 leading-relaxed">
-            Whether you are moving abroad, living as an expat or settling into the UK, we make managing your money simple. With accounts in multiple currencies, fee-free international payments and 24/7 digital banking, you can stay in control wherever life takes you.
+            Whether you are moving abroad, living as an expat or settling into the US, we make managing your money simple. With accounts in multiple currencies, fee-free international payments and 24/7 digital banking, you can stay in control wherever life takes you.
           </p>
           <p className="text-base text-[#595959] mb-6 leading-relaxed">
             Your money is held in a secure, well regulated jurisdiction. Plus if you have more than $250,000 or the currency equivalent with us, you will have a dedicated relationship manager to offer clear guidance, coordinate expertise and support you as your needs grow.

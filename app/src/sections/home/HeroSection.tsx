@@ -24,16 +24,16 @@ export default function HeroSection() {
           style={{ opacity: 0 }}
         >
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-            $5k Deposit Mortgage
+            Flexible Home Mortgages
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-4 font-medium">
-            Last seen in 1996.
+            Lock in your interest rate today.
           </p>
           <p className="text-base md:text-lg text-white/80 mb-4 leading-relaxed">
-            If you have a deposit of $5,000, you could get on the ladder sooner than you think. Conditions apply.
+            Find the right mortgage with flexible term options and competitive rates designed to fit your unique financial goals.
           </p>
           <p className="text-sm text-white/60 mb-8 leading-relaxed">
-            Average first-time buyer deposits were between $4,851 and $4,950 in 1996 based on Office for National Statistics House Price Index data.
+            All home loans are subject to credit approval and underwriting guidelines. Programs, rates, terms, and conditions are subject to change without notice. Equal Housing Lender.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link

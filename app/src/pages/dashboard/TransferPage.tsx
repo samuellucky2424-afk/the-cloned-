@@ -38,7 +38,7 @@ const transferTypes = [
     id: 'domestic' as TransferType,
     label: 'Domestic',
     title: 'Domestic transfer',
-    description: 'Send money to a UK account',
+    description: 'Send money to a US account',
     icon: Send,
   },
   {
@@ -170,7 +170,7 @@ export default function TransferPage() {
 
     if (activeTab === 'domestic') {
       if (!transferData.recipientAccount.trim()) newErrors.recipientAccount = 'Account number is required'
-      if (!transferData.sortCode.trim()) newErrors.sortCode = 'Sort code is required'
+      if (!transferData.sortCode.trim()) newErrors.sortCode = 'Routing number is required'
     }
 
     if (activeTab === 'international') {
@@ -371,7 +371,7 @@ export default function TransferPage() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
         <h2 className="text-xl font-bold text-[#1A1A1A]">Domestic transfer form</h2>
-        <p className="text-sm text-[#667A73] mt-1">Use UK account number and sort code details.</p>
+        <p className="text-sm text-[#667A73] mt-1">Use US account number and routing number details.</p>
       </div>
       {renderAccountSelect()}
       <div>
@@ -394,11 +394,11 @@ export default function TransferPage() {
           {errors.recipientAccount && <p className="text-red-600 text-xs mt-1">{errors.recipientAccount}</p>}
         </div>
         <div>
-          <label className="block text-sm font-medium text-[#4E655D] mb-2">Sort Code</label>
+          <label className="block text-sm font-medium text-[#4E655D] mb-2">Routing Number</label>
           <div className="relative">
             <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8AA097]" size={18} />
             <input type="text" name="sortCode" value={transferData.sortCode} onChange={handleChange}
-              placeholder="12-34-56" className={`${inputClass('sortCode')} pl-10`} />
+              placeholder="021000021" className={`${inputClass('sortCode')} pl-10`} />
           </div>
           {errors.sortCode && <p className="text-red-600 text-xs mt-1">{errors.sortCode}</p>}
         </div>

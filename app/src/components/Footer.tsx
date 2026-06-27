@@ -205,18 +205,18 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-start gap-8">
             <div className="flex-shrink-0">
               <div className="w-24 h-16 bg-white rounded flex items-center justify-center">
-                <span className="text-[#004D2A] font-bold text-xs text-center leading-tight">FSCS<br/>Protecting<br/>Your Money</span>
+                <span className="text-[#004D2A] font-bold text-xs text-center leading-tight">FDIC<br/>Insured<br/>Up to $250k</span>
               </div>
             </div>
             <div className="text-xs text-white/70 leading-relaxed">
               <p className="mb-4">
-                Korvantis Imperial Bank is a trading name of Korvantis Imperial Bank plc. Registered office: 25 Gresham Street, London EC2V 7HN. Registered in England and Wales No. 2065. Korvantis Imperial Bank plc is authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority under registration number 119278.
+                Korvantis Imperial Bank is a trademark of Korvantis Imperial Bank, Inc. Registered office: 1209 North Orange Street, Wilmington, DE 19801. Registered in the United States. Korvantis Imperial Bank is a member of the Federal Deposit Insurance Corporation (FDIC) and an Equal Housing Lender.
               </p>
               <p className="mb-4">
                 We're part of Korvantis Imperial Bank Group. Some of the products and services on our website are provided by different companies within the Group. You can find more details on our <Link to="#" className="underline hover:text-white">legal information page</Link>.
               </p>
               <p>
-                Mobile Banking app: Our app is available to UK personal online banking customers and online banking customers with accounts held in Jersey, the Bailiwick of Guernsey or the Isle of Man. You need to have a valid registered phone number. Minimum operating systems apply, so check the App Store or Google Play for details. Device registration required. The app doesn't work on jailbroken or rooted devices. Terms and conditions apply.
+                Mobile Banking app: Our app is available to US personal online banking customers. You need to have a valid registered US phone number. Minimum operating systems apply, so check the App Store or Google Play for details. Device registration required. The app doesn't work on jailbroken or rooted devices. Terms and conditions apply.
               </p>
             </div>
           </div>
