@@ -28,14 +28,7 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
           <div className="flex items-center gap-4">
             <Link to="/" className="flex-shrink-0">
               <div className="flex items-center gap-2">
-                {/* Horse Logo SVG */}
-                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" className="flex-shrink-0">
-                  <path d="M75 25c-5-8-15-12-25-10-8 2-14 7-18 14l-8 16c-2 4-2 8 0 12l4 8c2 4 6 6 10 6h16c4 0 8-2 10-6l12-20c3-5 3-11 0-16l-1-4z" fill="#1A1A1A"/>
-                  <path d="M50 20c-2 0-4 1-5 3l-3 6c-1 2 0 4 2 5l8 4c2 1 4 0 5-2l3-6c1-2 0-4-2-5l-8-4z" fill="#1A1A1A"/>
-                  <circle cx="35" cy="35" r="4" fill="#1A1A1A"/>
-                  <path d="M25 55c0-5 5-10 10-10s10 5 10 10" stroke="#1A1A1A" strokeWidth="3" fill="none"/>
-                </svg>
-                <Logo className="h-8 w-auto hidden md:block" />
+                <Logo className="h-6 sm:h-8 w-auto block" />
               </div>
             </Link>
             <button
