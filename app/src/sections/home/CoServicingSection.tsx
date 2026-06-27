@@ -16,7 +16,7 @@ export default function CoServicingSection() {
             We're introducing more ways you can manage your Korvantis Imperial Bank accounts and eligible partner accounts in one place, using co-servicing.
           </p>
           <Link
-            to="#"
+            to="/login"
             className="inline-flex items-center gap-2 text-white font-semibold hover:underline"
           >
             Co-servicing
@@ -37,7 +37,7 @@ export default function CoServicingSection() {
               Our new Cash In & Out machines are landing in local communities, giving you 24/7 access to pay in or withdraw cash. No queues. No opening hours. Just quick, easy banking whenever it suits you.
             </p>
             <Link
-              to="#"
+              to="/login"
               className="inline-flex items-center gap-1 text-sm font-semibold text-[#006A4D] hover:underline"
             >
               Find the nearest machines
@@ -56,7 +56,7 @@ export default function CoServicingSection() {
               Learn how we are making it easier to bank with us. Find out about the different kinds of accessibility support we provide, and how to get in touch.
             </p>
             <Link
-              to="#"
+              to="/login"
               className="inline-flex items-center gap-1 text-sm font-semibold text-[#006A4D] hover:underline"
             >
               How we can support you

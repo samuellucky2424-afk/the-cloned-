@@ -18,7 +18,7 @@ export default function AppSection() {
               Join the 10 million customers who already use our highly rated app.
             </p>
             <Link
-              to="#"
+              to="/login"
               className="inline-flex items-center gap-2 text-[#006A4D] font-semibold hover:underline"
             >
               More about our app
@@ -29,14 +29,14 @@ export default function AppSection() {
 
             {/* App Store Badges */}
             <div className="flex gap-4 mt-8">
-              <a href="#" className="flex items-center gap-2 bg-[#1A1A1A] text-white px-4 py-2.5 rounded-lg hover:bg-[#333] transition-colors">
+              <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#1A1A1A] text-white px-4 py-2.5 rounded-lg hover:bg-[#333] transition-colors">
                 <Apple size={24} />
                 <div className="text-left">
                   <div className="text-[10px] leading-none">Download on the</div>
                   <div className="text-sm font-semibold leading-tight">App Store</div>
                 </div>
               </a>
-              <a href="#" className="flex items-center gap-2 bg-[#1A1A1A] text-white px-4 py-2.5 rounded-lg hover:bg-[#333] transition-colors">
+              <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#1A1A1A] text-white px-4 py-2.5 rounded-lg hover:bg-[#333] transition-colors">
                 <Play size={24} className="fill-current" />
                 <div className="text-left">
                   <div className="text-[10px] leading-none">GET IT ON</div>

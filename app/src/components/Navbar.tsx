@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Search, Lock, Menu, X, Mic } from 'lucide-react'
 import Logo from './Logo'
 
@@ -10,40 +10,17 @@ interface NavbarProps {
 }
 
 export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps) {
-  const location = useLocation()
   const [searchOpen, setSearchOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
 
-  const topNavItems = [
-    { label: 'Personal', path: '/' },
-    { label: 'Business', path: '/business' },
-    { label: 'Private Banking', path: '/private-banking' },
-    { label: 'International', path: '/international' },
-  ]
+
 
   return (
     <>
-      {/* Top Utility Bar */}
+      {/* Top Utility Bar — Log in only */}
       <div className="bg-[#1A1A1A] text-white relative z-[101]">
         <div className="container-korvantis flex items-center justify-end h-10">
-          <nav className="flex items-center gap-0 h-full">
-            {topNavItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`px-4 py-2.5 text-sm font-medium transition-colors h-full flex items-center ${
-                  location.pathname === item.path
-                    ? 'bg-[#006A4D] text-white'
-                    : 'text-white hover:bg-white/10'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-
-            {/* Separator line */}
-            <span className="h-4 w-[1px] bg-white/20 mx-2" />
-
+          <nav className="flex items-center h-full">
             <Link
               to="/login"
               className="px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors h-full flex items-center gap-1.5"

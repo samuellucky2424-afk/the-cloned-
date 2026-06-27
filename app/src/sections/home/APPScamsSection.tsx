@@ -18,9 +18,9 @@ export default function APPScamsSection() {
 
           <p className="text-sm text-[#595959] mb-6 leading-relaxed">
             Authorised push payment (APP) scams happen when someone is tricked into transferring money to a fraudster's bank account. Information about Korvantis Imperial Bank's performance prior to the introduction of the reimbursement requirement in October 2024 can be found in{' '}
-            <Link to="#" className="text-[#006A4D] underline hover:no-underline">
+            <a href="https://www.psr.org.uk" target="_blank" rel="noopener noreferrer" className="text-[#006A4D] underline hover:no-underline">
               PSR's latest APP Scams Performance Report (PDF, 1.13MB)
-            </Link>{' '}
+            </a>{' '}
             published in February 2026.
           </p>
 
@@ -30,7 +30,7 @@ export default function APPScamsSection() {
 
           <p className="text-sm text-[#595959] mb-6">
             We've put together some{' '}
-            <Link to="#" className="text-[#006A4D] underline hover:no-underline">
+            <Link to="/login" className="text-[#006A4D] underline hover:no-underline">
               further guidance
             </Link>{' '}
             to help with any questions you may have.

@@ -54,7 +54,7 @@ export default function CustomerSupportSection() {
                 {helpLinks.map((link) => (
                   <Link
                     key={link}
-                    to="#"
+                    to="/login"
                     className="text-sm text-[#1A1A1A] hover:text-[#006A4D] py-2 transition-colors"
                   >
                     {link}

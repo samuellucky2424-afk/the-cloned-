@@ -37,7 +37,7 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              to="#"
+              to="/register"
               className="btn-primary text-center"
             >
               Start your mortgage journey

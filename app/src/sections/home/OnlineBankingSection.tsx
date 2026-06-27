@@ -44,13 +44,13 @@ export default function OnlineBankingSection() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                to="#"
+                to="/login"
                 className="btn-primary text-center"
               >
                 Log in
               </Link>
               <Link
-                to="#"
+                to="/register"
                 className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold text-sm rounded border-2 border-white hover:bg-white/10 transition-colors"
               >
                 Register

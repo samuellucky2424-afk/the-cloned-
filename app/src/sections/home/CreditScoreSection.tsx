@@ -17,7 +17,7 @@ export default function CreditScoreSection() {
               Take control of your finances with the power to check your credit score for free. Find your score and your accounts all in one app.
             </p>
             <Link
-              to="#"
+              to="/login"
               className="btn-secondary"
             >
               Check Your Credit Score

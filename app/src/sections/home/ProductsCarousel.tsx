@@ -83,7 +83,7 @@ export default function ProductsCarousel() {
                     {product.description}
                   </p>
                   <Link
-                    to="#"
+                    to="/register"
                     className="inline-flex items-center gap-1 text-sm font-semibold text-[#006A4D] hover:underline"
                   >
                     {product.cta}

@@ -61,10 +61,10 @@ export default function SurveyResultsSection() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="#" className="text-sm text-[#006A4D] hover:underline">
+          <Link to="/login" className="text-sm text-[#006A4D] hover:underline">
             View the full set of results
           </Link>
-          <Link to="#" className="text-sm text-[#006A4D] hover:underline">
+          <Link to="/login" className="text-sm text-[#006A4D] hover:underline">
             Korvantis Imperial Bank Service Quality Information page
           </Link>
         </div>

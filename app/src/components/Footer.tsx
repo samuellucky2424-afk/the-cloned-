@@ -82,6 +82,24 @@ export default function Footer() {
 
       {/* Main Footer Content */}
       <div className="container-korvantis py-12">
+        {/* Site Navigation */}
+        <div className="flex flex-wrap gap-1 mb-10 pb-8 border-b border-white/10">
+          {[
+            { label: 'Personal', path: '/' },
+            { label: 'Business', path: '/business' },
+            { label: 'Private Banking', path: '/private-banking' },
+            { label: 'International', path: '/international' },
+          ].map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="px-5 py-2 rounded-full text-sm font-semibold text-white border border-white/20 hover:bg-white/10 transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {/* Products and services */}
           <div>

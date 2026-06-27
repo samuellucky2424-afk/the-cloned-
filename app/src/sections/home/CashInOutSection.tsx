@@ -18,7 +18,7 @@ export default function CashInOutSection() {
               Our new Cash In & Out machines are landing in local communities, giving you 24/7 access to pay in or withdraw cash. No queues. No opening hours. Just quick, easy banking whenever it suits you.
             </p>
             <Link
-              to="#"
+              to="/login"
               className="inline-flex items-center gap-1 text-sm font-semibold text-[#006A4D] hover:underline"
             >
               Find the nearest machines

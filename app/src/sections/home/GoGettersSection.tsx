@@ -29,7 +29,7 @@ export default function GoGettersSection() {
               *Internal customer data, May 2026.
             </p>
             <Link
-              to="#"
+              to="/register"
               className="btn-secondary self-start"
             >
               More about Bank on Korvantis Imperial
