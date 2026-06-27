@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import {
   LayoutDashboard, Users, Receipt, BarChart3,
   Bell, LogOut, Search, Eye, Ban, CheckCircle,
-  UserCheck, UserX, Clock, CreditCard, Save, X
+  UserCheck, UserX, Clock, CreditCard, Save, X, Menu
 } from 'lucide-react'
 import { useAuth } from '../../hooks/AuthContext'
 import {
@@ -73,6 +73,7 @@ export default function AdminDashboard() {
   const [editingTransaction, setEditingTransaction] = useState<Transaction | null>(null)
   const [busy, setBusy] = useState('')
   const [message, setMessage] = useState('')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const [depositForm, setDepositForm] = useState({
     accountId: '',
@@ -263,9 +264,18 @@ export default function AdminDashboard() {
       <header className="sticky top-0 z-50 bg-white border-b border-[#D9E8E1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between min-h-16 py-3 gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-wide text-[#667A73]">Admin Dashboard</p>
-              <h1 className="text-lg font-bold text-[#006A4D]">Korvantis Imperial Bank</h1>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 rounded-lg hover:bg-[#F4FAF7] text-[#667A73] transition-colors"
+                title="Toggle Menu"
+              >
+                <Menu size={24} />
+              </button>
+              <div>
+                <p className="text-xs uppercase tracking-wide text-[#667A73]">Admin Dashboard</p>
+                <h1 className="text-lg font-bold text-[#006A4D]">Korvantis Imperial Bank</h1>
+              </div>
             </div>
             <div className="flex items-center gap-2">
               <button className="relative w-10 h-10 rounded-lg hover:bg-[#F4FAF7] flex items-center justify-center transition" title="Notifications">
@@ -282,7 +292,7 @@ export default function AdminDashboard() {
             </div>
           </div>
 
-          <nav className="flex items-center gap-2 overflow-x-auto pb-3">
+          <nav className="hidden md:flex items-center gap-2 overflow-x-auto pb-3">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -300,6 +310,70 @@ export default function AdminDashboard() {
           </nav>
         </div>
       </header>
+
+      {/* Mobile Drawer Menu (Mobile and Tablet only) */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-[100] md:hidden flex">
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-xs transition-opacity"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          {/* Drawer Content */}
+          <div className="relative flex flex-col w-4/5 max-w-xs bg-white h-full shadow-2xl p-6 animate-in slide-in-from-left duration-200">
+            <div className="flex items-center justify-between pb-6 border-b border-gray-100">
+              <div>
+                <p className="text-xs uppercase tracking-wide text-[#667A73]">Admin Portal</p>
+                <h2 className="text-base font-bold text-[#006A4D]">Menu</h2>
+              </div>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 rounded-lg hover:bg-[#F4FAF7] text-[#667A73]"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Nav items */}
+            <div className="flex-1 py-6 space-y-2">
+              {navItems.map((item) => {
+                const isActive = activeTab === item.id
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      setActiveTab(item.id)
+                      setMobileMenuOpen(false)
+                    }}
+                    className={`w-full flex items-center gap-3 px-4 py-3.5 rounded-lg text-sm font-semibold transition ${
+                      isActive
+                        ? 'bg-[#006A4D] text-white'
+                        : 'text-[#4E655D] hover:bg-[#E5F4EF]'
+                    }`}
+                  >
+                    <item.icon size={18} />
+                    {item.label}
+                  </button>
+                )
+              })}
+            </div>
+
+            {/* Logout button */}
+            <div className="pt-6 border-t border-gray-100">
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false)
+                  handleLogout()
+                }}
+                className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-semibold text-red-600 hover:bg-red-50 transition"
+              >
+                <LogOut size={18} />
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
         {message && (
