@@ -17,21 +17,6 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
 
   return (
     <>
-      {/* Top Utility Bar — Log in only */}
-      <div className="bg-[#1A1A1A] text-white relative z-[101]">
-        <div className="container-korvantis flex items-center justify-end h-10">
-          <nav className="flex items-center h-full">
-            <Link
-              to="/login"
-              className="px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors h-full flex items-center gap-1.5"
-            >
-              <Lock size={14} />
-              Log in
-            </Link>
-          </nav>
-        </div>
-      </div>
-
       {/* Main Navigation */}
       <header
         className={`sticky top-0 z-[100] bg-white transition-shadow duration-300 ${
@@ -99,14 +84,14 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
             </div>
           </div>
 
-          {/* Right: Auth Links (hidden on desktop, as they are moved to the top utility bar) */}
-          <div className="flex items-center gap-3 md:hidden">
+          {/* Right: Log in button — visible on all screen sizes */}
+          <div className="flex items-center gap-3">
             <Link
               to="/login"
               className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#1A1A1A] bg-[#F2F2F2] hover:bg-[#E5E5E5] rounded transition-colors"
-              title="Log in"
             >
               <Lock size={16} />
+              <span className="hidden sm:inline">Log in</span>
             </Link>
           </div>
         </div>
