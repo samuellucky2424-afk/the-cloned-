@@ -1,0 +1,99 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function currentUserDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function isAdmin() {
+      return signedIn() && currentUserDoc().data.role == 'admin';
+    }
+
+    function isBootstrapAdminEmail() {
+      return signedIn()
+        && request.auth.token.email in [
+          'Harryeriksen520@gmail.com',
+          'harryeriksen520@gmail.com'
+        ];
+    }
+
+    function isBootstrapAdminProfile(userId) {
+      return isSelf(userId)
+        && isBootstrapAdminEmail()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.email in [
+          'Harryeriksen520@gmail.com',
+          'harryeriksen520@gmail.com'
+        ]
+        && request.resource.data.role == 'admin'
+        && request.resource.data.status == 'Active';
+    }
+
+    function isSelfProfileUpdate(userId) {
+      return isSelf(userId)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.email == resource.data.email
+        && request.resource.data.role == resource.data.role
+        && request.resource.data.status == resource.data.status
+        && request.resource.data.balance == resource.data.balance
+        && request.resource.data.diff(resource.data).changedKeys().hasOnly([
+          'firstName',
+          'lastName',
+          'phone',
+          'address',
+          'country',
+          'gender',
+          'occupation',
+          'monthlySalary',
+          'sourceOfIncome',
+          'notificationPreferences',
+          'lastLoginAt',
+          'updatedAt'
+        ]);
+    }
+
+    function isSelfPendingTransaction() {
+      return signedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.status == 'Pending'
+        && request.resource.data.type in [
+          'Transfer',
+          'International Transfer',
+          'Bill Payment'
+        ];
+    }
+
+    match /users/{userId} {
+      allow read: if isSelf(userId) || isAdmin();
+      allow create: if (
+          isSelf(userId)
+          && request.resource.data.uid == request.auth.uid
+          && request.resource.data.role == 'customer'
+        ) || isBootstrapAdminProfile(userId);
+      allow update: if isAdmin() || isSelfProfileUpdate(userId) || isBootstrapAdminProfile(userId);
+      allow delete: if isAdmin();
+    }
+
+    match /accounts/{accountId} {
+      allow read: if signedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /transactions/{transactionId} {
+      allow read: if signedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow create: if isAdmin() || isSelfPendingTransaction();
+      allow update, delete: if isAdmin();
+    }
+  }
+}
