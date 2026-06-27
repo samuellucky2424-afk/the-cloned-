@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, Lock, Menu, X, Mic } from 'lucide-react'
+import { Search, Menu, X, Mic } from 'lucide-react'
 import Logo from './Logo'
 
 interface NavbarProps {
@@ -77,16 +77,6 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
             </div>
           </div>
 
-          {/* Right: Log in button — visible on all screen sizes */}
-          <div className="flex items-center gap-3">
-            <Link
-              to="/login"
-              className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#1A1A1A] bg-[#F2F2F2] hover:bg-[#E5E5E5] rounded transition-colors"
-            >
-              <Lock size={16} />
-              <span className="hidden sm:inline">Log in</span>
-            </Link>
-          </div>
         </div>
 
         {/* Mobile Search Bar */}

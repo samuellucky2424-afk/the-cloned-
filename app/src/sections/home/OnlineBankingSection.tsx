@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { Check, Lock, Bell, MessageSquare } from 'lucide-react'
 
@@ -42,20 +41,6 @@ export default function OnlineBankingSection() {
               ))}
             </ul>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/login"
-                className="btn-primary text-center"
-              >
-                Log in
-              </Link>
-              <Link
-                to="/register"
-                className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-white font-semibold text-sm rounded border-2 border-white hover:bg-white/10 transition-colors"
-              >
-                Register
-              </Link>
-            </div>
           </div>
         </div>
       </div>
