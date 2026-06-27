@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, Lock, Mail } from 'lucide-react'
+import { Eye, EyeOff, Lock, User } from 'lucide-react'
 import { useAuth } from '../../hooks/AuthContext'
 import type { UserProfile } from '../../lib/banking'
 
@@ -14,7 +14,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [formData, setFormData] = useState({
-    email: '',
+    accountNumber: '',
     password: '',
     rememberMe: false,
   })
@@ -44,10 +44,10 @@ export default function LoginPage() {
 
   const validate = () => {
     const newErrors: Record<string, string> = {}
-    if (!formData.email.trim()) {
-      newErrors.email = 'Email is required'
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address'
+    if (!formData.accountNumber.trim()) {
+      newErrors.accountNumber = 'Account number is required'
+    } else if (!/^\d{8}$/.test(formData.accountNumber.trim())) {
+      newErrors.accountNumber = 'Please enter a valid 8-digit account number'
     }
     if (!formData.password) {
       newErrors.password = 'Password is required'
@@ -64,7 +64,7 @@ export default function LoginPage() {
 
     setSubmitting(true)
     try {
-      const signedInProfile = await signIn(formData.email, formData.password, formData.rememberMe)
+      const signedInProfile = await signIn(formData.accountNumber, formData.password, formData.rememberMe)
       navigate(routeForProfile(signedInProfile), { replace: true })
     } catch (error) {
       setErrors({ form: error instanceof Error ? error.message : 'Unable to sign in.' })
@@ -107,22 +107,22 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
               <label className="block text-sm font-medium text-[#595959] mb-2">
-                Email Address
+                Account Number
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
                 <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  name="accountNumber"
+                  value={formData.accountNumber}
                   onChange={handleChange}
-                  placeholder="Enter your email"
+                  placeholder="Enter your 8-digit account number"
                   className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#006A4D] focus:border-transparent transition-all ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
+                    errors.accountNumber ? 'border-red-500' : 'border-gray-300'
                   }`}
                 />
               </div>
-              {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+              {errors.accountNumber && <p className="text-red-500 text-xs mt-1">{errors.accountNumber}</p>}
             </div>
 
             <div>

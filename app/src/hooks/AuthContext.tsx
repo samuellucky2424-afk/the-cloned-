@@ -28,6 +28,7 @@ import {
   isBootstrapAdminEmail,
   recordLogin,
   updateUserProfile,
+  getEmailByAccountNumber,
   type RegistrationData,
   type UserProfile,
 } from '../lib/banking'
@@ -37,7 +38,7 @@ interface AuthContextValue {
   profile: UserProfile | null
   loading: boolean
   configured: boolean
-  signIn: (email: string, password: string, rememberMe: boolean) => Promise<UserProfile>
+  signIn: (identifier: string, password: string, rememberMe: boolean) => Promise<UserProfile>
   register: (
     data: RegistrationData & { password: string },
     onStatus?: (status: string) => void
@@ -147,10 +148,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     profile,
     loading,
     configured: isFirebaseConfigured,
-    signIn: async (email, password, rememberMe) => {
+    signIn: async (identifier, password, rememberMe) => {
       try {
         const { auth } = requireFirebaseServices()
-        const signInEmail = email.trim()
+        let signInEmail = identifier.trim()
+
+        if (/^\d{8}$/.test(signInEmail)) {
+          const resolvedEmail = await getEmailByAccountNumber(signInEmail)
+          if (!resolvedEmail) {
+            throw new Error('No banking profile was found for this account number.')
+          }
+          signInEmail = resolvedEmail
+        }
         await setPersistence(auth, rememberMe ? browserLocalPersistence : browserSessionPersistence)
         let credential
 

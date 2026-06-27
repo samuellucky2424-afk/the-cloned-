@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Calculator, Heart, Shield, Lock, ChevronRight } from 'lucide-react'
+import { Calculator, Heart, Shield, ChevronRight } from 'lucide-react'
 
 const quickLinks = [
   {
@@ -17,18 +17,13 @@ const quickLinks = [
     label: 'Protecting yourself from fraud',
     href: '#',
   },
-  {
-    icon: Lock,
-    label: 'Log in',
-    href: '#',
-  },
 ]
 
 export default function QuickLinks() {
   return (
     <section className="bg-[#F2F2F2]">
       <div className="container-korvantis">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3">
           {quickLinks.map((link, index) => (
             <Link
               key={index}

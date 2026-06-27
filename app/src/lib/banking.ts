@@ -576,3 +576,17 @@ export async function createTransfer(
   return transactionRef.id
 }
 
+export async function getEmailByAccountNumber(accountNumber: string): Promise<string | null> {
+  const { db } = requireFirebaseServices()
+  const q = query(
+    collection(db, 'accounts'),
+    where('accountNumber', '==', accountNumber.trim())
+  )
+  const snapshot = await getDocs(q)
+  if (snapshot.empty) return null
+  
+  const accountData = snapshot.docs[0].data() as BankAccount
+  const userDoc = await getDoc(doc(db, 'users', accountData.userId))
+  return userDoc.exists() ? (userDoc.data() as UserProfile).email : null
+}
+

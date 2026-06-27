@@ -24,21 +24,12 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
         }`}
       >
         <div className="container-korvantis flex items-center justify-between h-16 md:h-20">
-          {/* Left: Logo + Menu */}
-          <div className="flex items-center gap-4">
-            <Link to="/" className="flex-shrink-0">
-              <div className="flex items-center gap-2">
-                <Logo className="h-6 sm:h-8 w-auto block" />
-              </div>
-            </Link>
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#1A1A1A] hover:bg-gray-100 rounded transition-colors"
-            >
-              {menuOpen ? <X size={18} /> : <Menu size={18} />}
-              <span className="hidden sm:inline">{menuOpen ? 'Close' : 'Menu'}</span>
-            </button>
-          </div>
+          {/* Left: Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <div className="flex items-center gap-2">
+              <Logo className="h-6 sm:h-8 w-auto block" />
+            </div>
+          </Link>
 
           {/* Center: Search */}
           <div className="hidden md:flex items-center flex-1 max-w-xl mx-8">
@@ -77,6 +68,14 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
             </div>
           </div>
 
+          {/* Right: Menu */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#1A1A1A] hover:bg-gray-100 rounded transition-colors"
+          >
+            {menuOpen ? <X size={18} /> : <Menu size={18} />}
+            <span className="hidden sm:inline">{menuOpen ? 'Close' : 'Menu'}</span>
+          </button>
         </div>
 
         {/* Mobile Search Bar */}

@@ -73,7 +73,7 @@ service cloud.firestore {
     }
 
     match /users/{userId} {
-      allow read: if isSelf(userId) || isAdmin();
+      allow read: if true;
       allow create: if (
           isSelf(userId)
           && request.resource.data.uid == request.auth.uid
@@ -84,7 +84,7 @@ service cloud.firestore {
     }
 
     match /accounts/{accountId} {
-      allow read: if signedIn() && (resource.data.userId == request.auth.uid || isAdmin());
+      allow read: if true;
       allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
       allow update: if isAdmin();
       allow delete: if isAdmin();
