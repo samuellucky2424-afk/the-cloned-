@@ -25,13 +25,13 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
     <>
       {/* Top Utility Bar */}
       <div className="bg-[#1A1A1A] text-white relative z-[101]">
-        <div className="container-korvantis flex items-center h-10">
-          <nav className="flex items-center gap-0">
+        <div className="container-korvantis flex items-center justify-end h-10">
+          <nav className="flex items-center gap-0 h-full">
             {topNavItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
-                className={`px-4 py-2.5 text-sm font-medium transition-colors ${
+                className={`px-4 py-2.5 text-sm font-medium transition-colors h-full flex items-center ${
                   location.pathname === item.path
                     ? 'bg-[#006A4D] text-white'
                     : 'text-white hover:bg-white/10'
@@ -40,6 +40,23 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
                 {item.label}
               </Link>
             ))}
+
+            {/* Separator line */}
+            <span className="h-4 w-[1px] bg-white/20 mx-2" />
+
+            <Link
+              to="/register"
+              className="px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors h-full flex items-center"
+            >
+              Register
+            </Link>
+            <Link
+              to="/login"
+              className="px-4 py-2.5 text-sm font-medium text-white hover:bg-white/10 transition-colors h-full flex items-center gap-1.5"
+            >
+              <Lock size={14} />
+              Log in
+            </Link>
           </nav>
         </div>
       </div>
@@ -111,20 +128,14 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
             </div>
           </div>
 
-          {/* Right: Auth Links */}
-          <div className="flex items-center gap-3">
-            <Link
-              to="/register"
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-[#006A4D] hover:bg-[#E6F2ED] rounded transition-colors"
-            >
-              Register
-            </Link>
+          {/* Right: Auth Links (hidden on desktop, as they are moved to the top utility bar) */}
+          <div className="flex items-center gap-3 md:hidden">
             <Link
               to="/login"
-              className="flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-[#1A1A1A] bg-[#F2F2F2] hover:bg-[#E5E5E5] rounded transition-colors"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#1A1A1A] bg-[#F2F2F2] hover:bg-[#E5E5E5] rounded transition-colors"
+              title="Log in"
             >
               <Lock size={16} />
-              <span className="hidden sm:inline">Log in</span>
             </Link>
           </div>
         </div>
