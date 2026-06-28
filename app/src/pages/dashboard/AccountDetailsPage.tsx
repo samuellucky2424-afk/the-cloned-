@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  ArrowLeft, Upload, CreditCard, DollarSign, Calendar, Copy, Check
+  ArrowLeft, CreditCard, DollarSign, Clock, Check
 } from 'lucide-react'
 import { useAuth } from '../../hooks/AuthContext'
 import {
@@ -148,7 +148,6 @@ export default function AccountDetailsPage() {
                   onClick={(e) => {
                     if (uploading) e.preventDefault()
                   }}>
-                  <Upload size={18} />
                   {uploading ? 'Uploading...' : 'Upload Picture'}
                 </span>
               </label>
@@ -180,9 +179,9 @@ export default function AccountDetailsPage() {
                       <div>
                         <p className="font-semibold">{account.label}</p>
                         <p className="text-white/70 text-sm">
-                          {account.accountType === 'current' && 'Current Account'}
-                          {account.accountType === 'savings' && 'Savings Account'}
-                          {account.accountType === 'cash' && 'Cash Account'}
+                          {account.type === 'current' && 'Current Account'}
+                          {account.type === 'savings' && 'Savings Account'}
+                          {account.type === 'isa' && 'ISA Account'}
                         </p>
                       </div>
                     </div>
@@ -204,17 +203,18 @@ export default function AccountDetailsPage() {
                       <p className="text-xs text-[#667A73] uppercase tracking-wide mb-2">Account Number</p>
                       <div className="flex items-center justify-between gap-2">
                         <p className="font-mono font-semibold text-[#1A1A1A]">
-                          {account.accountNumber}
+                          {account.accountNumber ?? 'N/A'}
                         </p>
                         <button
-                          onClick={() => copyToClipboard(account.accountNumber, account.id)}
+                          onClick={() => account.accountNumber && copyToClipboard(account.accountNumber, account.id)}
                           className="p-2 rounded-lg hover:bg-white transition"
-                          title="Copy to clipboard"
+                          title={account.accountNumber ? 'Copy to clipboard' : 'No account number'}
+                          disabled={!account.accountNumber}
                         >
                           {copiedAccountId === account.id ? (
                             <Check size={16} className="text-green-600" />
                           ) : (
-                            <Copy size={16} className="text-[#667A73]" />
+                            <span className="text-xs text-[#667A73]">Copy</span>
                           )}
                         </button>
                       </div>
@@ -232,14 +232,14 @@ export default function AccountDetailsPage() {
                     {/* IBAN */}
                     <div className="rounded-lg bg-[#F4FAF7] border border-[#D9E8E1] p-4">
                       <p className="text-xs text-[#667A73] uppercase tracking-wide mb-2">IBAN</p>
-                      <p className="font-mono text-sm text-[#1A1A1A]">{account.iban || 'N/A'}</p>
+                      <p className="font-mono text-sm text-[#1A1A1A]">N/A</p>
                     </div>
 
                     {/* Created Date */}
                     <div className="rounded-lg bg-[#F4FAF7] border border-[#D9E8E1] p-4">
                       <p className="text-xs text-[#667A73] uppercase tracking-wide mb-2">Created</p>
                       <div className="flex items-center gap-2">
-                        <Calendar size={16} className="text-[#006A4D]" />
+                        <Clock size={16} className="text-[#006A4D]" />
                         <p className="text-sm text-[#1A1A1A]">
                           {account.createdAt ? formatDateTime(account.createdAt).split(',')[0] : 'N/A'}
                         </p>

@@ -148,8 +148,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           if (updatedProfile && updatedProfile.status === 'Suspended') {
             // Dispatch custom event to notify app of suspension
             window.dispatchEvent(new CustomEvent('accountSuspended', { detail: updatedProfile }))
-            // Log out the user
-            signOut(auth).catch(console.error)
+            // Log out the user using the runtime firebase auth instance
+            try {
+              const services = requireFirebaseServices()
+              if (services.auth) {
+                void signOut(services.auth)
+              }
+            } catch (e) {
+              console.error('Failed to sign out after suspension', e)
+            }
             setUser(null)
             setProfile(null)
           } else if (updatedProfile) {

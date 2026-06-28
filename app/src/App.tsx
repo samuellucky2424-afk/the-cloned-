@@ -43,7 +43,7 @@ function App() {
 
   // Listen for account suspension events
   useEffect(() => {
-    const handleSuspension = (event: Event) => {
+    const handleSuspension = () => {
       setShowSuspensionModal(true)
       // Redirect to login after a brief delay to allow modal to be seen
       setTimeout(() => {
