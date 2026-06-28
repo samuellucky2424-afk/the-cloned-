@@ -29,6 +29,7 @@ import {
   recordLogin,
   updateUserProfile,
   getEmailByAccountNumber,
+  subscribeUserProfile,
   type RegistrationData,
   type UserProfile,
 } from '../lib/banking'
@@ -103,6 +104,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [loading, setLoading] = useState(true)
+  const [suspensionListener, setSuspensionListener] = useState<(() => void) | null>(null)
 
   const refreshProfile = async () => {
     if (!auth?.currentUser) {
@@ -125,6 +127,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setLoading(true)
       setUser(firebaseUser)
 
+      // Clean up previous suspension listener
+      if (suspensionListener) {
+        suspensionListener()
+        setSuspensionListener(null)
+      }
+
       if (!firebaseUser) {
         setProfile(null)
         setLoading(false)
@@ -134,6 +142,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       try {
         const loadedProfile = await getUserProfile(firebaseUser.uid)
         setProfile(loadedProfile)
+
+        // Subscribe to profile status changes for suspension detection
+        const unsubscribe = subscribeUserProfile(firebaseUser.uid, (updatedProfile) => {
+          if (updatedProfile && updatedProfile.status === 'Suspended') {
+            // Dispatch custom event to notify app of suspension
+            window.dispatchEvent(new CustomEvent('accountSuspended', { detail: updatedProfile }))
+            // Log out the user
+            signOut(auth).catch(console.error)
+            setUser(null)
+            setProfile(null)
+          } else if (updatedProfile) {
+            // Update profile if it changed
+            setProfile(updatedProfile)
+          }
+        })
+        setSuspensionListener(() => unsubscribe)
       } catch (error) {
         console.error('Failed to load user profile', error)
         setProfile(null)

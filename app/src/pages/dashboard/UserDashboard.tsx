@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import {
   Send, Globe, ArrowDownLeft, Clock,
   Home, CreditCard, Wallet, User, MessageCircle,
-  Bell, MessageSquare, ChevronRight, Settings
+  ChevronRight
 } from 'lucide-react'
 import { useAuth } from '../../hooks/AuthContext'
 import {
@@ -75,7 +75,11 @@ export default function UserDashboard() {
       <header className="bg-[#006A4D] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex items-center gap-3">
+            <button 
+              onClick={() => navigate('/account-details')}
+              className="flex items-center gap-3 hover:opacity-80 transition text-left"
+              title="View account details"
+            >
               {user?.photoURL ? (
                 <img src={user.photoURL} alt="Avatar" className="w-12 h-12 rounded-lg object-cover border border-white/20" />
               ) : (
@@ -87,24 +91,7 @@ export default function UserDashboard() {
                 <p className="text-white/70 text-xs uppercase tracking-wide">Welcome back</p>
                 <h1 className="text-2xl font-bold">Hi, {profile.firstName || getDisplayName(profile)}</h1>
               </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition" title="Messages">
-                <MessageSquare size={20} />
-              </button>
-              <button className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition relative" title="Notifications">
-                <Bell size={20} />
-                <span className="absolute top-2 right-2.5 w-2 h-2 bg-white rounded-full" />
-              </button>
-              <button
-                onClick={() => navigate('/settings')}
-                className="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
-                title="Settings"
-              >
-                <Settings size={18} />
-              </button>
-            </div>
+            </button>
           </div>
         </div>
       </header>

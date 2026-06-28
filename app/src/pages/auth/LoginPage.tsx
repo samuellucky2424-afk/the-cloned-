@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Eye, EyeOff, Lock, User } from 'lucide-react'
+import { Eye, EyeOff, Lock, User, AlertCircle, X } from 'lucide-react'
 import { useAuth } from '../../hooks/AuthContext'
 import type { UserProfile } from '../../lib/banking'
 
@@ -13,6 +13,7 @@ export default function LoginPage() {
   const { signIn, profile, loading: authLoading, configured } = useAuth()
   const [showPassword, setShowPassword] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [showSuspendedModal, setShowSuspendedModal] = useState(false)
   const [formData, setFormData] = useState({
     accountNumber: '',
     password: '',
@@ -65,6 +66,13 @@ export default function LoginPage() {
     setSubmitting(true)
     try {
       const signedInProfile = await signIn(formData.accountNumber, formData.password, formData.rememberMe)
+      
+      // Check if account is suspended
+      if (signedInProfile.status === 'Suspended') {
+        setShowSuspendedModal(true)
+        return
+      }
+      
       navigate(routeForProfile(signedInProfile), { replace: true })
     } catch (error) {
       setErrors({ form: error instanceof Error ? error.message : 'Unable to sign in.' })
@@ -191,6 +199,51 @@ export default function LoginPage() {
           </p>
         </div>
       </div>
+
+      {/* Suspended Account Modal */}
+      {showSuspendedModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+          <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden border border-[#D9E8E1] p-6 text-center animate-in fade-in zoom-in-95 duration-200">
+            <button
+              onClick={() => {
+                setShowSuspendedModal(false)
+                setFormData({ accountNumber: '', password: '', rememberMe: false })
+                setErrors({})
+              }}
+              className="absolute top-4 right-4 w-8 h-8 rounded-lg hover:bg-gray-100 flex items-center justify-center transition"
+              title="Close"
+            >
+              <X size={18} className="text-gray-500" />
+            </button>
+            <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-100">
+              <AlertCircle className="text-red-600" size={32} />
+            </div>
+            <h3 className="text-xl font-bold text-red-700 mb-2">Account Suspended</h3>
+            <p className="text-sm text-[#4E655D] mb-6 leading-relaxed">
+              Your account has been suspended. Please contact the bank immediately to resolve this issue.
+            </p>
+            <div className="flex flex-col gap-3">
+              <a
+                href="mailto:support@korvantisimperial.com?subject=Account Suspension Inquiry"
+                className="w-full py-3.5 bg-[#006A4D] hover:bg-[#004D2A] text-white font-semibold rounded-lg transition-all shadow-sm flex items-center justify-center gap-2"
+              >
+                Contact Customer Care
+              </a>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowSuspendedModal(false)
+                  setFormData({ accountNumber: '', password: '', rememberMe: false })
+                  setErrors({})
+                }}
+                className="w-full py-3 bg-white border border-[#D9E8E1] text-[#006A4D] hover:bg-[#F4FAF7] font-semibold rounded-lg transition-all"
+              >
+                Back to Sign In
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

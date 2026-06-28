@@ -360,6 +360,21 @@ export function subscribeUserTransactions(uid: string, callback: (transactions: 
   })
 }
 
+export function subscribeUserProfile(uid: string, callback: (profile: UserProfile | null) => void) {
+  if (!db) {
+    callback(null)
+    return (() => {}) as Unsubscribe
+  }
+
+  return onSnapshot(doc(db, 'users', uid), (snapshot) => {
+    if (snapshot.exists()) {
+      callback(mapDoc<UserProfile>(snapshot))
+    } else {
+      callback(null)
+    }
+  })
+}
+
 export function subscribeAllUsers(callback: (users: UserProfile[]) => void) {
   if (!db) {
     callback([])

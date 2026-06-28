@@ -159,7 +159,7 @@ export default function SettingsPage() {
         }
 
         try {
-          const response = await fetch('http://localhost:3001/api/upload', {
+          const response = await fetch('http://localhost:3002/api/upload', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

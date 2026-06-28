@@ -1,5 +1,6 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { AlertCircle, X } from 'lucide-react'
 import { AuthProvider } from './hooks/AuthContext'
 import { ThemeProvider } from './hooks/ThemeContext'
 import Navbar from './components/Navbar'
@@ -19,14 +20,17 @@ import AdminDashboard from './pages/dashboard/AdminDashboard'
 import TransferPage from './pages/dashboard/TransferPage'
 import SuspendedPage from './pages/dashboard/SuspendedPage'
 import SettingsPage from './pages/dashboard/SettingsPage'
+import AccountDetailsPage from './pages/dashboard/AccountDetailsPage'
 
 function App() {
   const location = useLocation()
+  const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
   const [cookieAccepted, setCookieAccepted] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [showSuspensionModal, setShowSuspensionModal] = useState(false)
 
-  const noLayoutPaths = ['/login', '/admin/login', '/register', '/dashboard', '/admin', '/transfer', '/suspended', '/settings']
+  const noLayoutPaths = ['/login', '/admin/login', '/register', '/dashboard', '/admin', '/transfer', '/suspended', '/settings', '/account-details']
   const useLayout = !noLayoutPaths.includes(location.pathname)
 
   useEffect(() => {
@@ -36,6 +40,19 @@ function App() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Listen for account suspension events
+  useEffect(() => {
+    const handleSuspension = (event: Event) => {
+      setShowSuspensionModal(true)
+      // Redirect to login after a brief delay to allow modal to be seen
+      setTimeout(() => {
+        navigate('/login', { replace: true })
+      }, 3000)
+    }
+    window.addEventListener('accountSuspended', handleSuspension)
+    return () => window.removeEventListener('accountSuspended', handleSuspension)
+  }, [navigate])
 
   useEffect(() => {
     const seoData: Record<string, { title: string; description: string }> = {
@@ -186,11 +203,52 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route
+                path="/account-details"
+                element={
+                  <ProtectedRoute role="customer">
+                    <AccountDetailsPage />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </main>
           {useLayout && <Footer />}
           {useLayout && !cookieAccepted && (
             <CookieBanner onAccept={() => setCookieAccepted(true)} />
+          )}
+
+          {/* Account Suspension Modal */}
+          {showSuspensionModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+              <div className="relative w-full max-w-md bg-white rounded-2xl shadow-xl overflow-hidden border border-[#D9E8E1] p-6 text-center animate-in fade-in zoom-in-95 duration-200">
+                <button
+                  onClick={() => setShowSuspensionModal(false)}
+                  className="absolute top-4 right-4 w-8 h-8 rounded-lg hover:bg-gray-100 flex items-center justify-center transition"
+                  title="Close"
+                >
+                  <X size={18} className="text-gray-500" />
+                </button>
+                <div className="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-100">
+                  <AlertCircle className="text-red-600" size={32} />
+                </div>
+                <h3 className="text-xl font-bold text-red-700 mb-2">Account Suspended</h3>
+                <p className="text-sm text-[#4E655D] mb-4 leading-relaxed">
+                  Your account has been suspended. You will be redirected to the login page.
+                </p>
+                <p className="text-xs text-[#667A73]">
+                  Please contact customer care immediately to resolve this issue.
+                </p>
+                <div className="flex flex-col gap-3 mt-6">
+                  <a
+                    href="mailto:support@korvantisimperial.com?subject=Account Suspension Inquiry"
+                    className="w-full py-3.5 bg-[#006A4D] hover:bg-[#004D2A] text-white font-semibold rounded-lg transition-all shadow-sm flex items-center justify-center gap-2"
+                  >
+                    Contact Customer Care
+                  </a>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       </AuthProvider>
