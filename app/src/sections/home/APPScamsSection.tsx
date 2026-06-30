@@ -7,7 +7,7 @@ export default function APPScamsSection() {
 
   return (
     <section className="section-padding bg-[#F7F7F5]" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <AlertTriangle size={24} className="text-amber-500" />

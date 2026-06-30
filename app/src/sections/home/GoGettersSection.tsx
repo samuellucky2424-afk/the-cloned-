@@ -6,7 +6,7 @@ export default function GoGettersSection() {
 
   return (
     <section className="section-padding bg-white" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="flex flex-col md:flex-row items-stretch gap-0 rounded-lg overflow-hidden shadow-lg">
           {/* Left: Image */}
           <div className="flex-1 min-h-[300px] md:min-h-[400px]">
@@ -23,7 +23,7 @@ export default function GoGettersSection() {
               Go Getters
             </h2>
             <p className="text-base text-[#595959] mb-6 leading-relaxed">
-              Over 14 million people bank with Korvantis Imperial Bank to help turn plans into reality.
+              Over 14 million people bank with Seagate Metal to help turn plans into reality.
             </p>
             <p className="text-sm text-[#595959] mb-8">
               *Internal customer data, May 2026.
@@ -32,7 +32,7 @@ export default function GoGettersSection() {
               to="/register"
               className="btn-secondary self-start"
             >
-              More about Bank on Korvantis Imperial
+              More about Bank on Seagate Metal
             </Link>
           </div>
         </div>

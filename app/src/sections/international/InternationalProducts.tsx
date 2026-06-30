@@ -34,7 +34,7 @@ export default function InternationalProducts() {
 
   return (
     <section className="section-padding bg-white" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-4">
           Our international products
         </h2>
@@ -82,7 +82,7 @@ export default function InternationalProducts() {
             Your money is held in a secure, well regulated jurisdiction. Plus if you have more than $250,000 or the currency equivalent with us, you will have a dedicated relationship manager to offer clear guidance, coordinate expertise and support you as your needs grow.
           </p>
           <p className="text-lg font-semibold text-[#1A1A1A]">
-            Whatever comes next, you can bank on Korvantis Imperial Bank.
+            Whatever comes next, you can bank on Seagate Metal.
           </p>
         </div>
       </div>

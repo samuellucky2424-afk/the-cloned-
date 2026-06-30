@@ -16,12 +16,12 @@ const ThemeContext = createContext<ThemeContextType>({
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
-    const saved = localStorage.getItem('korvantis-theme')
+    const saved = localStorage.getItem('seagate-theme')
     return (saved === 'dark' || saved === 'light') ? saved : 'light'
   })
 
   useEffect(() => {
-    localStorage.setItem('korvantis-theme', theme)
+    localStorage.setItem('seagate-theme', theme)
     if (theme === 'dark') {
       document.documentElement.classList.add('dark')
     } else {

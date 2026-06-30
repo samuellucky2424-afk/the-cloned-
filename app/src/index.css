@@ -27,16 +27,16 @@
     --ring: 158 100% 21%;
     --radius: 4px;
 
-    --korvantis-green: #006A4D;
-    --korvantis-dark-green: #004D2A;
-    --korvantis-light-green: #00A86B;
-    --korvantis-soft-green: #E6F2ED;
-    --korvantis-lime: #7AB800;
-    --korvantis-black: #1A1A1A;
-    --korvantis-gray: #595959;
-    --korvantis-light-gray: #F2F2F2;
-    --korvantis-off-white: #F7F7F5;
-    --korvantis-link-blue: #005EA5;
+    --seagate-green: #006A4D;
+    --seagate-dark-green: #004D2A;
+    --seagate-light-green: #00A86B;
+    --seagate-soft-green: #E6F2ED;
+    --seagate-lime: #7AB800;
+    --seagate-black: #1A1A1A;
+    --seagate-gray: #595959;
+    --seagate-light-gray: #F2F2F2;
+    --seagate-off-white: #F7F7F5;
+    --seagate-link-blue: #005EA5;
   }
 
   * {
@@ -55,7 +55,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter', sans-serif;
-    color: var(--korvantis-black);
+    color: var(--seagate-black);
   }
 
   .font-display {
@@ -64,7 +64,7 @@
 }
 
 @layer components {
-  .container-korvantis {
+  .container-seagate {
     max-width: 1280px;
     margin: 0 auto;
     padding-left: 24px;
@@ -85,7 +85,7 @@
   }
 
   .btn-secondary:hover {
-    background-color: var(--korvantis-dark-green);
+    background-color: var(--seagate-dark-green);
   }
 
   .link-underline {

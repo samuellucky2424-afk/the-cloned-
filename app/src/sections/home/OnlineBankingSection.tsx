@@ -12,13 +12,13 @@ export default function OnlineBankingSection() {
 
   return (
     <section className="section-padding bg-[#006A4D]" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left: Phone Image */}
           <div className="flex-1 max-w-sm">
             <img
               src="/images/app-download.jpg"
-              alt="Korvantis Imperial Bank mobile app"
+              alt="Seagate Metal mobile app"
               className="w-full h-auto rounded-lg shadow-xl"
             />
           </div>

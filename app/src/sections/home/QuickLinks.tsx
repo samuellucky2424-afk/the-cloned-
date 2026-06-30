@@ -22,7 +22,7 @@ const quickLinks = [
 export default function QuickLinks() {
   return (
     <section className="bg-[#F2F2F2]">
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="grid grid-cols-1 sm:grid-cols-3">
           {quickLinks.map((link, index) => (
             <Link

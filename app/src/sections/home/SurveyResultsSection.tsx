@@ -7,7 +7,7 @@ const bankRatings = [
   { name: 'Nationwide', percentage: 74 },
   { name: 'First Direct', percentage: 73 },
   { name: 'Chase', percentage: 72 },
-  { name: 'Korvantis Imperial Bank', percentage: 65 },
+  { name: 'Seagate Metal', percentage: 65 },
 ]
 
 export default function SurveyResultsSection() {
@@ -15,7 +15,7 @@ export default function SurveyResultsSection() {
 
   return (
     <section className="section-padding bg-white" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-4">
           Independent service quality survey results
         </h2>
@@ -47,7 +47,7 @@ export default function SurveyResultsSection() {
                 <div className="flex-1 h-6 bg-gray-100 rounded-full overflow-hidden">
                   <div
                     className={`h-full rounded-full transition-all duration-1000 ${
-                      bank.name === 'Korvantis Imperial Bank' ? 'bg-[#006A4D]' : 'bg-gray-300'
+                      bank.name === 'Seagate Metal' ? 'bg-[#006A4D]' : 'bg-gray-300'
                     }`}
                     style={{ width: `${bank.percentage}%` }}
                   />
@@ -65,7 +65,7 @@ export default function SurveyResultsSection() {
             View the full set of results
           </Link>
           <Link to="/login" className="text-sm text-[#006A4D] hover:underline">
-            Korvantis Imperial Bank Service Quality Information page
+            Seagate Metal Service Quality Information page
           </Link>
         </div>
       </div>

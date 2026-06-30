@@ -880,7 +880,7 @@ export default function TransferPage() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:support@korvantisimperial.com?subject=Account Suspension Inquiry"
+                href="mailto:consultant@seagatemetals.com?subject=Account Suspension Inquiry"
                 className="w-full py-3.5 bg-[#006A4D] hover:bg-[#004D2A] text-white font-semibold rounded-lg transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 Contact Customer Care

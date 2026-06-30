@@ -7,7 +7,7 @@ export default function CashInOutSection() {
 
   return (
     <section className="bg-white" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis pb-16">
+      <div className="container-seagate pb-16">
         <div className="flex flex-col md:flex-row items-center gap-8 bg-[#F7F7F5] rounded-lg overflow-hidden">
           <div className="flex-1 p-8 md:p-12">
             <div className="flex items-center gap-3 mb-4">

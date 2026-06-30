@@ -7,7 +7,7 @@ export default function MTDBanner() {
 
   return (
     <section className="section-padding bg-white" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="flex flex-col md:flex-row items-center gap-8 bg-[#E6F2ED] rounded-lg p-8 md:p-12">
           <div className="flex-shrink-0 w-16 h-16 bg-[#006A4D] rounded-lg flex items-center justify-center">
             <Receipt size={32} className="text-white" />
@@ -17,11 +17,11 @@ export default function MTDBanner() {
               Free Making Tax Digital software for sole traders
             </h2>
             <p className="text-sm text-[#595959] leading-relaxed mb-4">
-              If your business comes under the new HMRC rules, you could get the HMRC-recognised accounting software from Korvantis Imperial Bank. Designed for{' '}
+              If your business comes under the new HMRC rules, you could get the HMRC-recognised accounting software from Seagate Metal. Designed for{' '}
               <Link to="#" className="text-[#006A4D] underline hover:no-underline">
                 Making Tax Digital for Income Tax
               </Link>{' '}
-              and free with Korvantis Imperial Business Accounts.
+              and free with Seagate Metal Business Accounts.
             </p>
             <Link
               to="#"

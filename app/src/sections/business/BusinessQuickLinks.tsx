@@ -11,7 +11,7 @@ const quickLinks = [
 export default function BusinessQuickLinks() {
   return (
     <section className="bg-[#F2F2F2]">
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {quickLinks.map((link, index) => (
             <Link

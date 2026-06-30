@@ -20,7 +20,7 @@ export default function Logo({ className = '', color = '#1A1A1A' }: LogoProps) {
         fontWeight="700"
         letterSpacing="0.5"
       >
-        KORVANTIS IMPERIAL BANK
+        SEAGATE METAL
       </text>
     </svg>
   );

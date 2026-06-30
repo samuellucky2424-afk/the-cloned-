@@ -6,14 +6,14 @@ export default function CoServicingSection() {
 
   return (
     <section className="section-padding bg-white" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis space-y-6">
+      <div className="container-seagate space-y-6">
         {/* Green Banner */}
         <div className="bg-[#006A4D] rounded-lg p-8 md:p-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Making banking easier
           </h2>
           <p className="text-white/80 mb-6 max-w-2xl leading-relaxed">
-            We're introducing more ways you can manage your Korvantis Imperial Bank accounts and eligible partner accounts in one place, using co-servicing.
+            We're introducing more ways you can manage your Seagate Metal accounts and eligible partner accounts in one place, using co-servicing.
           </p>
           <Link
             to="/login"

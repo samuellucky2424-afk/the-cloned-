@@ -49,8 +49,8 @@ const menuCategories: MenuCategory[] = [
     subtitle: 'Accounts & services',
     links: [
       { label: 'Compare current accounts', href: '#' },
-      { label: 'Club Korvantis', href: '#' },
-      { label: 'Switch to Korvantis Imperial Bank', href: '#' },
+      { label: 'Club Seagate Metal', href: '#' },
+      { label: 'Switch to Seagate Metal', href: '#' },
       { label: 'Student account', href: '#' },
     ],
   },
@@ -119,7 +119,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div className="fixed inset-0 z-[110] bg-white overflow-hidden">
       {/* Close button */}
-      <div className="container-korvantis flex justify-end pt-4">
+      <div className="container-seagate flex justify-end pt-4">
         <button
           onClick={onClose}
           className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-[#1A1A1A] hover:bg-gray-100 rounded transition-colors"
@@ -129,7 +129,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
         </button>
       </div>
 
-      <div className="container-korvantis flex h-[calc(100vh-80px)]">
+      <div className="container-seagate flex h-[calc(100vh-80px)]">
         {/* Left Sidebar */}
         <div className="w-full md:w-80 border-r border-gray-200 overflow-y-auto pr-4">
           <nav className="space-y-1">

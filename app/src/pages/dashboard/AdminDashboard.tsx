@@ -274,7 +274,7 @@ export default function AdminDashboard() {
               </button>
               <div>
                 <p className="text-xs uppercase tracking-wide text-[#667A73]">Admin Dashboard</p>
-                <h1 className="text-lg font-bold text-[#006A4D]">Korvantis Imperial Bank</h1>
+                <h1 className="text-lg font-bold text-[#006A4D]">Seagate Metal</h1>
               </div>
             </div>
             <div className="flex items-center gap-2">

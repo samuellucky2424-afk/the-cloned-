@@ -114,7 +114,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-lg">
         <div className="text-center mb-6">
           <div className="mb-3">
-            <span className="text-xl font-bold text-white">KORVANTIS IMPERIAL BANK</span>
+            <span className="text-xl font-bold text-white">SEAGATE METAL</span>
           </div>
           <p className="text-white/70 text-sm">Create your account in 2 easy steps</p>
         </div>

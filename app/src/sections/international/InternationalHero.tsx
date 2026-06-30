@@ -17,7 +17,7 @@ export default function InternationalHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-korvantis flex items-center min-h-[600px] md:min-h-[650px]">
+      <div className="relative z-10 container-seagate flex items-center min-h-[600px] md:min-h-[650px]">
         <div 
           ref={contentRef}
           className="max-w-xl py-16 md:py-24"

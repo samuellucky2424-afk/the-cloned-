@@ -6,7 +6,7 @@ export default function CreditScoreSection() {
 
   return (
     <section className="section-padding bg-[#F7F7F5]" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left: Text Content */}
           <div className="flex-1">

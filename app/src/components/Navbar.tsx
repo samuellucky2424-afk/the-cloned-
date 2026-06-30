@@ -21,7 +21,7 @@ export default function Navbar({ menuOpen, setMenuOpen, scrolled }: NavbarProps)
           scrolled ? 'shadow-md' : 'shadow-sm'
         }`}
       >
-        <div className="container-korvantis flex items-center justify-between h-16 md:h-20">
+        <div className="container-seagate flex items-center justify-between h-16 md:h-20">
           {/* Left: Logo */}
           <Link to="/" className="flex-shrink-0">
             <div className="flex items-center gap-2">

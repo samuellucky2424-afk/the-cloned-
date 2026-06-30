@@ -83,7 +83,7 @@ export default function AdminLoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <span className="text-2xl font-bold text-white">KORVANTIS ADMIN PORTAL</span>
+            <span className="text-2xl font-bold text-white">SEAGATE METAL ADMIN PORTAL</span>
           </div>
           <p className="text-white/70">Administrator access only. Enter your admin credentials.</p>
         </div>

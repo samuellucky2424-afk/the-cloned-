@@ -17,7 +17,7 @@ export default function PrivateHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-korvantis flex items-center justify-center min-h-[600px] md:min-h-[650px]">
+      <div className="relative z-10 container-seagate flex items-center justify-center min-h-[600px] md:min-h-[650px]">
         <div 
           ref={contentRef}
           className="text-center max-w-2xl py-16 md:py-24"
@@ -27,7 +27,7 @@ export default function PrivateHero() {
             The best way forward
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-8">
-            Korvantis Imperial Private Banking could help you realise the true value of your wealth.
+            Seagate Metal Private Banking could help you realise the true value of your wealth.
           </p>
           <Link
             to="#"

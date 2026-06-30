@@ -7,7 +7,7 @@ export default function AppSection() {
 
   return (
     <section className="section-padding bg-white overflow-hidden" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Left: Text Content */}
           <div className="flex-1 max-w-lg">
@@ -51,7 +51,7 @@ export default function AppSection() {
             <div className="relative max-w-xs md:max-w-sm">
               <img
                 src="/images/phone-app.png"
-                alt="Korvantis Imperial Bank Mobile Banking App"
+                alt="Seagate Metal Mobile Banking App"
                 className="w-full h-auto drop-shadow-2xl"
               />
             </div>

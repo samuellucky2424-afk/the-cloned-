@@ -86,7 +86,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="mb-4">
-            <span className="text-2xl font-bold text-white">KORVANTIS IMPERIAL BANK</span>
+            <span className="text-2xl font-bold text-white">SEAGATE METAL</span>
           </div>
           <p className="text-white/70">Welcome back! Sign in to your account.</p>
         </div>
@@ -224,7 +224,7 @@ export default function LoginPage() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:support@korvantisimperial.com?subject=Account Suspension Inquiry"
+                href="mailto:consultant@seagatemetals.com?subject=Account Suspension Inquiry"
                 className="w-full py-3.5 bg-[#006A4D] hover:bg-[#004D2A] text-white font-semibold rounded-lg transition-all shadow-sm flex items-center justify-center gap-2"
               >
                 Contact Customer Care

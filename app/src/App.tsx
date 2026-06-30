@@ -57,58 +57,58 @@ function App() {
   useEffect(() => {
     const seoData: Record<string, { title: string; description: string }> = {
       '/': {
-        title: 'Personal Banking | Korvantis Imperial Bank',
-        description: 'Securely manage your personal banking online with Korvantis Imperial Bank. View balances, transfer funds, and pay bills.'
+        title: 'Personal Banking | Seagate Metal',
+        description: 'Securely manage your personal banking online with Seagate Metal. View balances, transfer funds, and pay bills.'
       },
       '/business': {
-        title: 'Business Banking | Korvantis Imperial Bank',
-        description: 'Explore tailored commercial accounts, business loans, and expert banking services for enterprise growth with Korvantis Imperial Bank.'
+        title: 'Business Banking | Seagate Metal',
+        description: 'Explore tailored commercial accounts, business loans, and expert banking services for enterprise growth with Seagate Metal.'
       },
       '/private-banking': {
-        title: 'Private Banking | Korvantis Imperial Bank',
-        description: 'Exclusive wealth management, dedicated private bankers, and custom financial solutions with Korvantis Imperial Bank Private Banking.'
+        title: 'Private Banking | Seagate Metal',
+        description: 'Exclusive wealth management, dedicated private bankers, and custom financial solutions with Seagate Metal Private Banking.'
       },
       '/international': {
-        title: 'International Money Transfer | Korvantis Imperial Bank',
-        description: 'Send and receive money globally with competitive exchange rates and secure transaction protocols via Korvantis Imperial Bank.'
+        title: 'International Money Transfer | Seagate Metal',
+        description: 'Send and receive money globally with competitive exchange rates and secure transaction protocols via Seagate Metal.'
       },
       '/login': {
-        title: 'Log In | Korvantis Imperial Bank Online Banking',
-        description: 'Log in securely to your Korvantis Imperial Bank online banking portal to manage your accounts, cards, and payments.'
+        title: 'Log In | Seagate Metal Online Banking',
+        description: 'Log in securely to your Seagate Metal online banking portal to manage your accounts, cards, and payments.'
       },
       '/admin/login': {
-        title: 'Admin Portal Log In | Korvantis Imperial Bank',
-        description: 'Secure administrator authentication for the Korvantis Imperial Bank admin management portal.'
+        title: 'Admin Portal Log In | Seagate Metal',
+        description: 'Secure administrator authentication for the Seagate Metal admin management portal.'
       },
       '/register': {
-        title: 'Register for Online Banking | Korvantis Imperial Bank',
-        description: 'Register now for online banking access with Korvantis Imperial Bank. Quick, easy, and secure setup.'
+        title: 'Register for Online Banking | Seagate Metal',
+        description: 'Register now for online banking access with Seagate Metal. Quick, easy, and secure setup.'
       },
       '/dashboard': {
-        title: 'Dashboard | Korvantis Imperial Bank Online Banking',
-        description: 'Your Korvantis Imperial Bank customer dashboard. View available balances, link accounts, and access quick actions.'
+        title: 'Dashboard | Seagate Metal Online Banking',
+        description: 'Your Seagate Metal customer dashboard. View available balances, link accounts, and access quick actions.'
       },
       '/admin': {
-        title: 'Admin Dashboard | Korvantis Imperial Bank Portal',
-        description: 'Administrative overview, user account status updates, deposit approvals, and transaction reports for Korvantis Imperial Bank.'
+        title: 'Admin Dashboard | Seagate Metal Portal',
+        description: 'Administrative overview, user account status updates, deposit approvals, and transaction reports for Seagate Metal.'
       },
       '/transfer': {
-        title: 'Transfer Funds & Pay Bills | Korvantis Imperial Bank',
+        title: 'Transfer Funds & Pay Bills | Seagate Metal',
         description: 'Easily execute domestic and international money transfers, schedule payments, and settle utility bills securely.'
       },
       '/settings': {
-        title: 'Account Settings | Korvantis Imperial Bank Profile',
+        title: 'Account Settings | Seagate Metal Profile',
         description: 'Manage your profile details, upload your avatar picture, and configure security preferences for your online banking account.'
       },
       '/suspended': {
-        title: 'Account Suspended | Korvantis Imperial Bank Security',
+        title: 'Account Suspended | Seagate Metal Security',
         description: 'Security notification: This account has been suspended under active review. Please contact customer care immediately.'
       }
     }
 
     const currentSeo = seoData[location.pathname] || {
-      title: 'Korvantis Imperial Bank | Secure Online Banking',
-      description: 'Securely manage your personal and business banking online with Korvantis Imperial Bank.'
+      title: 'Seagate Metal | Secure Online Banking',
+      description: 'Securely manage your personal and business banking online with Seagate Metal.'
     }
 
     document.title = currentSeo.title
@@ -241,7 +241,7 @@ function App() {
                 </p>
                 <div className="flex flex-col gap-3 mt-6">
                   <a
-                    href="mailto:support@korvantisimperial.com?subject=Account Suspension Inquiry"
+                    href="mailto:consultant@seagatemetals.com?subject=Account Suspension Inquiry"
                     className="w-full py-3.5 bg-[#006A4D] hover:bg-[#004D2A] text-white font-semibold rounded-lg transition-all shadow-sm flex items-center justify-center gap-2"
                   >
                     Contact Customer Care

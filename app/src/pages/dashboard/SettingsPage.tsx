@@ -525,7 +525,7 @@ export default function SettingsPage() {
               <h2 className="font-semibold mb-3">Preview</h2>
               <div className="p-4 rounded-lg bg-[#F4FAF7] border border-[#D9E8E1]">
                 <p className="text-sm font-medium">Dashboard Card</p>
-                <p className="text-xs text-[#667A73]">Green header, white panels, and Korvantis Imperial Bank-style action controls.</p>
+                <p className="text-xs text-[#667A73]">Green header, white panels, and Seagate Metal-style action controls.</p>
                 <div className="mt-3 h-2 rounded-full bg-[#006A4D]" />
               </div>
             </div>
@@ -552,7 +552,7 @@ export default function SettingsPage() {
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm">Data Sharing</p>
-                    <p className="text-xs text-[#667A73]">Share data with Korvantis Imperial Bank Group</p>
+                    <p className="text-xs text-[#667A73]">Share data with Seagate Metal Group</p>
                   </div>
                   <button type="button" className="w-12 h-7 rounded-full bg-[#006A4D] relative flex-shrink-0">
                     <div className="absolute top-1 w-5 h-5 rounded-full bg-white translate-x-6" />

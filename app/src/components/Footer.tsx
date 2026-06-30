@@ -32,9 +32,6 @@ export default function Footer() {
       { label: 'Life events', href: '#' },
       { label: 'Help and support', href: '#' },
       { label: 'Banking near you', href: '#' },
-      { label: 'Virtual assistant', href: '#' },
-      { label: 'Call us', href: '#' },
-      { label: 'Find a branch', href: '#' },
       { label: 'SignVideo & Signly', href: '#' },
       { label: 'Accessibility & disability', href: '#' },
       { label: 'Feedback & complaints', href: '#' },
@@ -49,10 +46,10 @@ export default function Footer() {
       { label: 'Financial Services Compensation Scheme', href: '#' },
     ],
     about: [
-      { label: 'About Korvantis Imperial Bank', href: '#' },
+      { label: 'About Seagate Metal', href: '#' },
       { label: 'Diversity, equity & inclusion', href: '#' },
       { label: 'Media centre', href: '#' },
-      { label: 'Korvantis Imperial Bank Group', href: '#' },
+      { label: 'Seagate Metal Group', href: '#' },
       { label: 'Careers', href: '#' },
     ],
   }
@@ -61,7 +58,7 @@ export default function Footer() {
     <footer className="bg-[#004D2A] text-white">
       {/* App Banner */}
       <div className="bg-[#006A4D]">
-        <div className="container-korvantis py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="container-seagate py-8 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-6">
             <div className="w-16 h-24 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -81,7 +78,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container-korvantis py-12">
+      <div className="container-seagate py-12">
         {/* Site Navigation */}
         <div className="flex flex-wrap gap-1 mb-10 pb-8 border-b border-white/10">
           {[
@@ -210,13 +207,13 @@ export default function Footer() {
             </div>
             <div className="text-xs text-white/70 leading-relaxed">
               <p className="mb-4">
-                Korvantis Imperial Bank is a trademark of Korvantis Imperial Bank, Inc. Registered office: 1209 North Orange Street, Wilmington, DE 19801. Registered in the United States. Korvantis Imperial Bank is a member of the Federal Deposit Insurance Corporation (FDIC) and an Equal Housing Lender.
+                Seagate Metal is a trademark of Seagate Metal, Inc. Registered office: 1209 North Orange Street, Wilmington, DE 19801. Registered in the United States. Seagate Metal is a member of the Federal Deposit Insurance Corporation (FDIC) and an Equal Housing Lender.
               </p>
               <p className="mb-4">
-                We're part of Korvantis Imperial Bank Group. Some of the products and services on our website are provided by different companies within the Group. You can find more details on our <Link to="#" className="underline hover:text-white">legal information page</Link>.
+                We're part of Seagate Metal Group. Some of the products and services on our website are provided by different companies within the Group. You can find more details on our <Link to="#" className="underline hover:text-white">legal information page</Link>.
               </p>
               <p>
-                Mobile Banking app: Our app is available to US personal online banking customers. You need to have a valid registered US phone number. Minimum operating systems apply, so check the App Store or Google Play for details. Device registration required. The app doesn't work on jailbroken or rooted devices. Terms and conditions apply.
+                Mobile Banking app: Our app is available to personal online banking customers. Minimum operating systems apply, so check the App Store or Google Play for details. Device registration required. The app doesn't work on jailbroken or rooted devices. Terms and conditions apply.
               </p>
             </div>
           </div>

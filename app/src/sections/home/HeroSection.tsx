@@ -17,7 +17,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-korvantis flex items-center min-h-[600px] md:min-h-[700px]">
+      <div className="relative z-10 container-seagate flex items-center min-h-[600px] md:min-h-[700px]">
         <div 
           ref={contentRef}
           className="max-w-xl py-16 md:py-24"
@@ -30,7 +30,7 @@ export default function HeroSection() {
             Smart commercial and corporate banking solutions.
           </p>
           <p className="text-base md:text-lg text-white/80 mb-4 leading-relaxed">
-            Manage cash flow, optimize liquidity, and scale your operations with Korvantis Imperial Bank's premium commercial suites.
+            Manage cash flow, optimize liquidity, and scale your operations with Seagate Metal's premium commercial suites.
           </p>
           <p className="text-sm text-white/60 mb-8 leading-relaxed">
             All commercial credit facilities and loans are subject to credit approval and underwriting guidelines. Member FDIC.

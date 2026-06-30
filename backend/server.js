@@ -102,7 +102,7 @@ app.post('/api/otp/resend', async (req, res) => {
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333333; max-width: 600px; margin: 0 auto; border: 1px solid #e1e8e5; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
         <div style="background-color: #006A4D; color: #ffffff; padding: 24px; text-align: center;">
-          <h2 style="margin: 0; font-size: 20px; letter-spacing: 0.5px;">KORVANTIS IMPERIAL BANK</h2>
+          <h2 style="margin: 0; font-size: 20px; letter-spacing: 0.5px;">SEAGATE METAL</h2>
           <p style="margin: 4px 0 0 0; font-size: 14px; opacity: 0.85;">Security Verification</p>
         </div>
         <div style="padding: 24px; background-color: #ffffff;">
@@ -136,12 +136,12 @@ app.post('/api/otp/resend', async (req, res) => {
 
           <div style="margin-top: 32px; padding: 16px; background-color: #fff9f6; border-left: 4px solid #ff7a00; border-radius: 4px;">
             <p style="margin: 0; font-size: 12px; color: #7a3d00; font-weight: bold;">Security Warning:</p>
-            <p style="margin: 4px 0 0 0; font-size: 12px; color: #7a3d00;">If you did not initiate this transaction, please log in to your account and freeze your card immediately, or call Korvantis Imperial Bank customer service.</p>
+            <p style="margin: 4px 0 0 0; font-size: 12px; color: #7a3d00;">If you did not initiate this transaction, please log in to your account and freeze your card immediately, or call Seagate Metal customer service.</p>
           </div>
         </div>
         <div style="background-color: #f4faf7; color: #667a73; padding: 16px; text-align: center; font-size: 11px; border-top: 1px solid #e1e8e5;">
           <p style="margin: 0;">This is an automated security message. Please do not reply to this email.</p>
-          <p style="margin: 4px 0 0 0;">&copy; Korvantis Imperial Bank Group, Inc. All rights reserved.</p>
+          <p style="margin: 4px 0 0 0;">&copy; Seagate Metal Group, Inc. All rights reserved.</p>
         </div>
       </div>
     `;
@@ -149,7 +149,7 @@ app.post('/api/otp/resend', async (req, res) => {
     const { data: resData, error: resError } = await resend.emails.send({
       from: fromAddress,
       to: [email],
-      subject: `Korvantis Imperial Bank Security: Authorize Transfer - ${otpCode}`,
+      subject: `Seagate Metal Security: Authorize Transfer - ${otpCode}`,
       html: emailHtml
     });
 

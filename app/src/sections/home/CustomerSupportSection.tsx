@@ -22,7 +22,7 @@ export default function CustomerSupportSection() {
 
   return (
     <section className="section-padding bg-[#E6F2ED]" ref={sectionRef} style={{ opacity: 0 }}>
-      <div className="container-korvantis">
+      <div className="container-seagate">
         <h2 className="text-3xl md:text-4xl font-bold text-[#1A1A1A] text-center mb-8">
           Customer support
         </h2>

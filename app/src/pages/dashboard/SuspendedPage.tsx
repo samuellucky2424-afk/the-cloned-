@@ -94,7 +94,7 @@ export default function SuspendedPage() {
                 <Mail size={18} className="text-[#006A4D] flex-shrink-0" />
                 <div>
                   <p className="text-sm font-medium">Email Customer Care</p>
-                  <p className="text-xs text-[#667A73]">support@korvantisimperial.com</p>
+                  <p className="text-xs text-[#667A73]">consultant@seagatemetals.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 p-3 bg-[#F4FAF7] border border-[#D9E8E1] rounded-lg">
@@ -110,7 +110,7 @@ export default function SuspendedPage() {
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <a
-            href="mailto:support@korvantisimperial.com?subject=Account Suspension Inquiry"
+            href="mailto:consultant@seagatemetals.com?subject=Account Suspension Inquiry"
             className="flex-1 py-4 bg-[#006A4D] text-white font-semibold rounded-lg hover:bg-[#004D2A] transition flex items-center justify-center gap-2"
           >
             <Mail size={18} />
